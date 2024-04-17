@@ -1,66 +1,43 @@
-import Image from "next/image";
+// page.js
+
+"use client"
+
 import styles from "./page.module.css";
+import { useState } from 'react';
+import Image from 'next/image';
+
 
 export default function Home() {
+  const [showContactInfo, setShowContactInfo] = useState(false);
+
   return (
     <main className={styles.main}>
-
-
       <div className={styles.center}>
-   <h1 style={{fontSize:"6em"}}>BeechTree.ai</h1>
-      </div>
+        <h1 style={{ fontSize: "5em" }}>BeechTree.ai</h1>
+        <Image src="/classroom1.jpg" alt="Classroom" width={500} height={300} />
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth ilkdanformation about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <h2 style={{ fontSize: "2em" }}>Transforming education using safe common sense AI</h2>
+         {/* <img src="/beechtree-logo.jpg" alt="BeechTree Logo" />  */}
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        {!showContactInfo ? (
+          <button onClick={() => setShowContactInfo(true)} className={styles.largeButton}>
+            Contact!
+          </button>
+        ) : (
+          <div className={styles.contactInfo}>
+            <a href="mailto:admin@beechtree.ai">admin@beechtree.ai</a>
+          </div>
+        )}
+ <br/>
+ <br/>
+ <br/>
+      <footer className={styles.footer}>
+      <Image src="/beechtree-logo.jpg" alt="BeechTree Logo" width={100} height={60} /> <br/>
+        BeechTree LLC ©2024
+      </footer>
     </main>
   );
 }

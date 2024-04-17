@@ -40,11 +40,23 @@
 }
 
 .grid {
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100%;
+  /* Optional: Set height to fill the parent container */
+  flex-direction: column;
+  /* Stack children vertically */
+}
+
+/* .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
   max-width: 100%;
   width: var(--max-width);
-}
+} */
 
 .card {
   padding: 1rem 1.2rem;
@@ -75,11 +87,45 @@
 
 .center {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* Stack children vertically */
   align-items: center;
-  position: relative;
-  padding: 4rem 0;
+  /* Center children horizontally */
+  text-align: center;
+  /* Center text for all child elements */
+  gap: 20px;
+  /* Add space between the elements */
 }
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  /* Adjust as needed */
+  font-size: 1em;
+  color: black;
+  /* Or any other color you prefer */
+}
+
+
+.contactInfo {
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.contactInfo a {
+  color: inherit;
+  /* This makes the link use the text color of the parent element */
+  text-decoration: none;
+  /* This removes the underline from the link */
+}
+
+.contactInfo a:hover {
+  text-decoration: underline;
+  /* Optionally, add underline on hover for better UX */
+}
+
 
 .center::before {
   background: var(--secondary-glow);
@@ -108,6 +154,27 @@
 .logo {
   position: relative;
 }
+
+
+.largeButton {
+  background-color: black;
+  /* Set the background color to black */
+  color: white;
+  /* Set the text color to white */
+  padding: 15px 30px;
+  /* Add padding to increase the size */
+  font-size: 1.5em;
+  /* Make the font larger */
+  border: none;
+  /* Remove default border */
+  cursor: pointer;
+  /* Change cursor on hover to indicate it's clickable */
+  border-radius: 5px;
+  /* Optional: add rounded corners */
+}
+
+
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -179,11 +246,9 @@
     border-radius: 0;
     border: none;
     border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
+    background: linear-gradient(to bottom,
+        rgba(var(--background-start-rgb), 1),
+        rgba(var(--callout-rgb), 0.5));
     background-clip: padding-box;
     backdrop-filter: blur(24px);
   }
@@ -194,11 +259,9 @@
     inset: auto 0 0;
     padding: 2rem;
     height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgb(var(--background-end-rgb)) 40%);
     z-index: 1;
   }
 }
@@ -224,6 +287,7 @@
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
