@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import { useState } from 'react';
 import Image from 'next/image';
 import VectorShiftChatBot from "./VectorShiftChatBot";
+import FlowiseBot from "./FlowiseBot";
 
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
         ) : (
           <VectorShiftChatBot/>
         )} */}
+        <FlowiseBot/>
  <br/>
  <br/>
  <br/>
