@@ -7,6 +7,13 @@
   min-height: 100vh;
 }
 
+
+.heading {
+  font-size: 6em;
+  /* Set your desired font-size */
+  /* Add other styles for h1 here */
+}
+
 .center {
   display: flex;
   flex-direction: column;
@@ -27,6 +34,11 @@
   text-align: center;
   padding: 10px;
   margin-top: 10px;
+}
+
+.contactInfo a {
+  font-size: 2em; /* Set the font size for the anchor tag */
+  /* You can add other styles if needed */
 }
 
 .largeButton {
