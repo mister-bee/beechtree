@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import { Button } from "semantic-ui-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 import FlowiseBot from "./FlowiseBot.jsx";
 
@@ -41,6 +42,7 @@ export default function Home() {
           </Button>
         )}
 
+        <Link href="/payment">$</Link>
         <FlowiseBot />
       </div>
       <br />
