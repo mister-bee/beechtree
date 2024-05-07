@@ -1,3 +1,5 @@
+/* page.module.css */
+
 .main {
   display: flex;
   flex-direction: column;
@@ -9,8 +11,8 @@
 
 .heading {
   font-size: 6em;
-  /* Set your desired font-size */
-  /* Add other styles for h1 here */
+  margin-left: 20px; /* New - Adjust as needed for desired spacing */
+  margin-right: 20px; /* New - Adjust as needed for desired spacing */
 }
 
 .center {
