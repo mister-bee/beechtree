@@ -38,7 +38,7 @@ export default function Home() {
             color="blue"
             onClick={() => setShowContactInfo(!showContactInfo)}
           >
-            {isMobile ? "Info" : "Contact!"}
+            Contact
           </Button>
         )}
 
@@ -46,7 +46,6 @@ export default function Home() {
         <FlowiseBot />
       </div>
 
-      <br />
       <footer className={styles.footer}>
         <Image
           src="/beechtree-logo.jpg"
@@ -55,6 +54,7 @@ export default function Home() {
           width={60}
           height={40}
         />
+        <br />
         BeechTree LLC ©2024
       </footer>
     </main>
