@@ -11,8 +11,9 @@
 
 .heading {
   font-size: 6em;
-  margin-left: 20px; /* New - Adjust as needed for desired spacing */
-  margin-right: 20px; /* New - Adjust as needed for desired spacing */
+  margin-left: 20px; /* Adjust as needed for desired spacing */
+  margin-right: 20px; /* Adjust as needed for desired spacing */
+  margin-bottom: 0px; /* Initially set to give space under the heading */
 }
 
 .center {
@@ -141,7 +142,11 @@
   }
 
   .heading {
-    font-size: 5rem; /* Smaller font size for mobile headers */
+    font-size: 2.5rem; /* Smaller font size for better mobile fit */
+    margin-left: 10px; /* Reduced margin for smaller screens */
+    margin-right: 10px; /* Reduced margin for smaller screens */
+    padding: 10px 0; /* Add padding to give space top and bottom */
+    margin-bottom: -20px; /* Reduce the space between the heading and the image */
   }
 
   .description {
@@ -151,6 +156,10 @@
   .largeButton {
     padding: 10px 20px;
     font-size: 1rem;
+  }
+  .center Image {
+    /* Assuming Image is directly used within .center, adjust if structured differently */
+    margin-top: 0px; /* Reducing the top margin of the image if any */
   }
 }
 
