@@ -42,7 +42,7 @@ export default function Home() {
           </Button>
         )}
 
-        <Link href="/payment">$</Link>
+        {/* <Link href="/payment">$</Link> */}
         <FlowiseBot />
       </div>
       <br />

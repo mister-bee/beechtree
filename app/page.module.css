@@ -7,7 +7,6 @@
   min-height: 100vh;
 }
 
-
 .heading {
   font-size: 6em;
   /* Set your desired font-size */
@@ -91,7 +90,9 @@
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  transition:
+    background 200ms,
+    border 200ms;
 }
 
 .card span {
@@ -129,12 +130,16 @@
   }
 }
 
-@media (max-width: 700px) {
-
+@media (max-width: 768px) {
+  /* New breakpoint */
   .main,
   .center,
   .footer {
-    padding: 10px;
+    padding: 1rem; /* Adjusted padding for smaller screens */
+  }
+
+  .heading {
+    font-size: 5rem; /* Smaller font size for mobile headers */
   }
 
   .description {
@@ -147,14 +152,16 @@
   }
 }
 
-@media (min-width: 701px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1120px) {
   .grid {
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Improved grid layout for medium screens */
   }
 }
 
 @media (prefers-color-scheme: dark) {
-
   .vercelLogo,
   .logo {
     filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
