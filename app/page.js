@@ -45,9 +45,7 @@ export default function Home() {
         {/* <Link href="/payment">$</Link> */}
         <FlowiseBot />
       </div>
-      <br />
-      <br />
-      <br />
+
       <br />
       <footer className={styles.footer}>
         <Image
@@ -57,7 +55,6 @@ export default function Home() {
           width={60}
           height={40}
         />
-        <br />
         BeechTree LLC ©2024
       </footer>
     </main>
