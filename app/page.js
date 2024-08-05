@@ -26,7 +26,7 @@ export default function Home() {
           width={750}
           height={450}
         />
-        <h2>Transforming education using safe common sense AI</h2>
+        <h2>Transforming education with common sense AI</h2>
 
         {showContactInfo ? (
           <div className={styles.contactInfo}>
