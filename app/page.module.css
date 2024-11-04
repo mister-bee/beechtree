@@ -188,3 +188,22 @@
     transform: rotate(0deg);
   }
 }
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Increased to 70% of viewport height */
+  margin: 1rem 0;
+  overflow: hidden; /* Prevent any potential image overflow */
+}
+
+.responsiveImage {
+  object-position: center 25%; /* Adjust vertical position to focus on the important part of the image */
+}
+
+@media (max-width: 768px) {
+  .imageContainer {
+    height: 50vh; /* Increased from 40vh for better mobile visibility */
+    margin: 0.5rem 0; /* Reduced margin on mobile */
+  }
+}

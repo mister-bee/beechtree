@@ -129,3 +129,111 @@ a {
     font-size: 2.5rem;
   }
 }
+
+/* Add these new styles at an appropriate location in globals.css */
+.container {
+  width: 100%;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 8rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.header p {
+  margin: 0.5rem 0 2rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature {
+  width: 33%;
+  background-color: #eaf2ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  color: #007acc;
+}
+
+.cta-button {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #007acc;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.testimonial {
+  margin: 2rem auto;
+  background-color: #eaf2ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: #333;
+  max-width: 33%;
+}
+
+.testimonial-title {
+  font-size: 1.2rem;
+  color: #007acc;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-author {
+  font-style: normal;
+  color: #555;
+}
+
+.footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon {
+  font-size: 2.4rem !important;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007acc;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.link {
+  color: #007acc;
+  text-decoration: none;
+}
