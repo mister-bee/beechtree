@@ -56,7 +56,7 @@ const App = () => {
             with students, enhancing engagement and safety in the
             classroom.&rdquo;
           </p>
-          <p className="testimonial-author">— School Principal, XYZ School</p>
+          <p className="testimonial-author">— School Principal</p>
         </div>
 
         {/* Footer */}
