@@ -1,8 +1,35 @@
-import React from "react";
+"use client";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaEnvelope } from "react-icons/fa";
 
 const App = () => {
+  const [showChat, setShowChat] = useState(false);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    if (showChat) {
+      const script = document.createElement("script");
+      script.src = "https://elevenlabs.io/convai-widget/index.js";
+      script.async = true;
+      script.type = "text/javascript";
+      document.body.appendChild(script);
+    }
+  }, [showChat]);
+
+  const handleMouseEnter = () => {
+    timeoutRef.current = setTimeout(() => {
+      setShowChat(true);
+    }, 5000); // 5 seconds
+  };
+
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-center p-4">
       <div className="container">
@@ -62,19 +89,21 @@ const App = () => {
         {/* Footer */}
         <div className="footer">
           <a href="mailto:info@beechtree.ai" className="contact-icon">
-            ✉
+            <FaEnvelope />
           </a>
-          <p>
-            &copy; 2024 BeechTree LLC |{" "}
-            <a href="#" className="link">
-              Privacy Policy
-            </a>{" "}
-            |{" "}
-            <a href="#" className="link">
-              Terms of Service
-            </a>
+          <p
+            className="chat-trigger"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            &copy; 2024 BeechTree LLC
           </p>
         </div>
+      </div>
+
+      {/* Chat Widget */}
+      <div className={`chat-widget ${showChat ? "visible" : ""}`}>
+        <elevenlabs-convai agent-id="Qy6YOCa88ibsoc81nE6S"></elevenlabs-convai>
       </div>
     </div>
   );
