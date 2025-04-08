@@ -2,6 +2,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --font-primary: "Quicksand", sans-serif;
   /* other root variables */
@@ -9,6 +13,7 @@
 
 body {
   font-family: var(--font-primary);
+  background-color: #f3f4f6;
   /* other body styles */
 }
 
@@ -141,7 +146,7 @@ a {
 }
 
 .header h1 {
-  font-size: 8rem;
+  font-size: 4rem;
   color: #333;
   font-weight: 700;
 }
@@ -158,57 +163,38 @@ a {
   align-items: center;
   gap: 2rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-.feature {
-  width: 33%;
-  background-color: #eaf2ff;
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-.feature-title {
-  font-size: 1.2rem;
-  color: #007acc;
-}
-
-.cta-button {
-  margin-top: 2rem;
-  padding: 0.75rem 2rem;
-  font-size: 1.1rem;
-  color: white;
-  background-color: #007acc;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
+.feature,
+.testimonial {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
 }
 
 .testimonial {
   margin: 2rem auto;
-  background-color: #eaf2ff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  color: #333;
-  max-width: 33%;
-}
-
-.testimonial-title {
-  font-size: 1.2rem;
-  color: #007acc;
-  margin-bottom: 1rem;
-  font-weight: 500;
 }
 
 .testimonial-quote {
   font-style: italic;
-  margin-bottom: 0.5rem;
+  color: #4b5563;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
 }
 
 .testimonial-author {
-  font-style: normal;
-  color: #555;
+  color: #6b7280;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
 }
 
 .footer {
@@ -253,4 +239,452 @@ a {
 .chat-widget.visible {
   opacity: 1;
   visibility: visible;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #666;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.cta-button {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background-color: #2185d0;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #1678c2;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-title {
+  color: #2563eb;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Specific styling for the testimonial section */
+.testimonial h3.feature-title {
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  color: #4b5563;
+  font-size: 1.1rem;
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 1.4;
+}
+
+.testimonial-author {
+  color: #666;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: #2185d0;
+  transition: color 0.3s;
+}
+
+.contact-icon:hover {
+  color: #1678c2;
+}
+
+.chat-widget {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.chat-widget.visible {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .chat-widget {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: #4b5563;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  margin: 2rem auto;
+  display: block;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.cta-button:hover {
+  background-color: #1d4ed8;
+}
+
+.features {
+  max-width: 800px;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.feature {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.feature-title {
+  color: #2563eb;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  color: #4b5563;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+.testimonial-author {
+  color: #6b7280;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 4rem;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: #2563eb;
+  transition: color 0.2s;
+}
+
+.contact-icon:hover {
+  color: #1d4ed8;
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: #f9fafb;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-button:hover {
+  background-color: #1d4ed8;
+}
+
+.form-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  text-align: center;
+}
+
+.form-message.success {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.form-message.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .contact-form-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Back arrow styling */
+.back-arrow-link {
+  display: inline-flex;
+  align-items: center;
+  color: #2563eb;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.back-arrow-link:hover {
+  color: #1d4ed8;
+}
+
+.back-arrow-link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+  stroke-width: 2;
+}
+
+/* Form styles */
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* Make sure testimonial width is consistent with feature tiles */
+.features,
+.testimonial {
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.feature,
+.testimonial {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Fix back arrow link to appear on the right side of Send Message button */
+.contact-form-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.back-arrow-link {
+  display: inline-flex;
+  align-items: center;
+  color: #2563eb;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.back-arrow-link:hover {
+  color: #1d4ed8;
+}
+
+.back-arrow-link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+  stroke-width: 2;
+}
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 8rem; /* Double size on larger screens */
+  }
 }
