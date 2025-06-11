@@ -9,7 +9,9 @@ import {
   FaUniversity,
   FaFileAlt,
   FaHeart,
+  FaPalette,
 } from "react-icons/fa";
+import { GiBee } from "react-icons/gi";
 
 export default function SoftwarePage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -73,6 +75,13 @@ export default function SoftwarePage() {
       icon: <FaHeart />,
       description:
         "Mindfulness and movement program designed specifically for classroom use. Includes guided breathing exercises, age-appropriate yoga poses, and mindfulness activities. Features timer tools, activity tracking, and classroom management integration.",
+    },
+    {
+      title: "Art Bee",
+      tagline: "AI-powered creative arts and visual learning platform",
+      icon: <FaPalette />,
+      description:
+        "Art Bee buzzes with creativity, offering students and teachers an innovative platform for digital art creation and visual learning. Features AI-assisted drawing tools, collaborative art projects, and curriculum-integrated visual arts lessons. Includes virtual art galleries, step-by-step tutorials, and assessment tools for creative projects. Perfect for developing artistic skills while enhancing visual communication and creative thinking across all subjects.",
     },
   ];
 
