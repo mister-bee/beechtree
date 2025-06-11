@@ -2,10 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --font-primary: "Quicksand", sans-serif;
   /* other root variables */
@@ -161,7 +157,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -175,6 +171,13 @@ a {
   width: 100%;
   max-width: 500px;
   text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.feature:hover,
+.testimonial:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial {
@@ -686,5 +689,233 @@ a {
 @media (min-width: 768px) {
   .header h1 {
     font-size: 8rem; /* Double size on larger screens */
+  }
+}
+
+/* Ensure proper centering for feature boxes */
+.feature {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Remove extra margin from testimonial title */
+.testimonial .feature-title {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Center feature container properly */
+.flex.flex-col.items-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Software Page Styles */
+.software-page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 2rem 0;
+}
+
+.software-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.software-title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 3rem;
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.software-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.software-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+.software-icon {
+  font-size: 4rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.software-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.software-card-description {
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.software-footer {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.return-button {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.return-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-close:hover {
+  color: #374151;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.modal-icon {
+  font-size: 4rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.modal-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.modal-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Update main page icon sizes */
+.text-5xl {
+  font-size: 4rem !important;
+}
+
+/* Responsive design for software page */
+@media (max-width: 768px) {
+  .software-title {
+    font-size: 2.5rem;
+  }
+
+  .software-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .software-card {
+    padding: 1.5rem;
+  }
+
+  .software-icon {
+    font-size: 3rem;
   }
 }

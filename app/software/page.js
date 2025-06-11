@@ -1,14 +1,15 @@
 "use client";
-import {
-  Card,
-  Icon,
-  Container,
-  Header,
-  Modal,
-  Button,
-} from "semantic-ui-react";
-import styles from "../page.module.css";
 import { useState } from "react";
+import Link from "next/link";
+import {
+  FaHandPaper,
+  FaBook,
+  FaPencilAlt,
+  FaHandshake,
+  FaUniversity,
+  FaFileAlt,
+  FaHeart,
+} from "react-icons/fa";
 
 export default function SoftwarePage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -18,21 +19,21 @@ export default function SoftwarePage() {
     {
       title: "Kansha",
       tagline: "Gratitude based classroom management",
-      icon: "hand paper outline",
+      icon: <FaHandPaper />,
       description:
         "Kansha revolutionizes classroom management by focusing on positive reinforcement and gratitude. This innovative platform helps teachers track and reward good behavior, fostering a supportive learning environment. Features include digital reward systems, behavior tracking analytics, and parent communication tools.",
     },
     {
       title: "Picture Books",
       tagline: "Amazing AI stories for kids",
-      icon: "book",
+      icon: <FaBook />,
       description:
         "Create personalized picture books using advanced AI technology. Teachers and students can generate unique stories tailored to specific learning objectives, reading levels, and interests. Includes a vast library of AI-generated illustrations and customizable narrative templates.",
     },
     {
       title: "Writing Universe",
       tagline: "Using AI to curate creative writing",
-      icon: "pencil",
+      icon: <FaPencilAlt />,
       description:
         "An interactive platform that guides students through the creative writing process. Features AI-powered writing prompts, story structure assistance, and real-time feedback on grammar and style. Includes collaborative writing tools and portfolio management.",
     },
@@ -40,28 +41,28 @@ export default function SoftwarePage() {
       title: "Reading Adventures",
       tagline:
         "Using AI to build up phonics and fluency and students according to level",
-      icon: "book",
+      icon: <FaBook />,
       description:
         "Adaptive reading platform that automatically adjusts to each student's reading level. Incorporates interactive phonics exercises, comprehension activities, and progress tracking. Features voice recognition for reading practice and immediate feedback.",
     },
     {
       title: "Peace Out",
       tagline: "Using an AI facilitator to arrive at conflict resolutions",
-      icon: "handshake",
+      icon: <FaHandshake />,
       description:
         "An AI-powered conflict resolution tool that helps students and teachers navigate disagreements constructively. Provides guided meditation exercises, conflict resolution strategies, and documentation of agreements reached.",
     },
     {
       title: "Classroom Democracy",
       tagline: "Classroom management based on the US government",
-      icon: "university",
+      icon: <FaUniversity />,
       description:
         "Transform your classroom into a mini democracy with this comprehensive platform. Students learn about government processes while participating in classroom decision-making. Includes voting systems, role assignments, and civic education materials.",
     },
     {
       title: "Testing Champ",
       tagline: "Using AI to hone in on test skills",
-      icon: "file alternate outline",
+      icon: <FaFileAlt />,
       description:
         "Comprehensive test preparation platform that adapts to individual student needs. Features practice tests, performance analytics, personalized study plans, and stress management techniques. Covers standardized tests and customizable assessments.",
     },
@@ -69,7 +70,7 @@ export default function SoftwarePage() {
       title: "BeSO",
       tagline:
         "Breathing, stretching, observing: Using yoga and meditation in the classroom",
-      icon: "heart",
+      icon: <FaHeart />,
       description:
         "Mindfulness and movement program designed specifically for classroom use. Includes guided breathing exercises, age-appropriate yoga poses, and mindfulness activities. Features timer tools, activity tracking, and classroom management integration.",
     },
@@ -81,90 +82,61 @@ export default function SoftwarePage() {
   };
 
   return (
-    <main className={styles.main} style={{ paddingTop: "1rem" }}>
-      <Container style={{ padding: "0 2rem" }}>
-        <Header
-          as="h1"
-          textAlign="center"
-          style={{
-            marginBottom: "2rem",
-            fontSize: "3.5rem",
-            fontWeight: "700",
-          }}
-        >
-          Our Software Solutions
-        </Header>
-        <Card.Group centered stackable>
-          {softwareProducts.map((product, index) => (
-            <Card key={index} onClick={() => handleCardClick(product)}>
-              <Card.Content>
-                <Icon
-                  name={product.icon}
-                  size="huge"
-                  style={{
-                    display: "block",
-                    margin: "0.5em auto",
-                    color: "#4183c4",
-                    cursor: "pointer",
-                  }}
-                />
-                <Card.Header textAlign="center">{product.title}</Card.Header>
-                <Card.Description textAlign="center">
-                  {product.tagline}
-                </Card.Description>
-              </Card.Content>
-            </Card>
-          ))}
-        </Card.Group>
+    <main className="software-page">
+      <div className="software-container">
+        <h1 className="software-title">Our Software Solutions</h1>
 
-        <Modal
-          open={modalOpen}
-          onClose={() => setModalOpen(false)}
-          size="small"
-        >
-          {selectedProduct && (
-            <>
-              <Modal.Header>{selectedProduct.title}</Modal.Header>
-              <Modal.Content>
-                <Icon
-                  name={selectedProduct.icon}
-                  size="huge"
-                  style={{
-                    display: "block",
-                    margin: "0.5em auto",
-                    color: "#4183c4",
-                  }}
-                />
+        <div className="software-grid">
+          {softwareProducts.map((product, index) => (
+            <div
+              key={index}
+              className="software-card"
+              onClick={() => handleCardClick(product)}
+            >
+              <div className="software-icon">{product.icon}</div>
+              <h3 className="software-card-title">{product.title}</h3>
+              <p className="software-card-description">{product.tagline}</p>
+            </div>
+          ))}
+        </div>
+
+        {modalOpen && selectedProduct && (
+          <div className="modal-overlay" onClick={() => setModalOpen(false)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-header">
+                <h2>{selectedProduct.title}</h2>
+                <button
+                  className="modal-close"
+                  onClick={() => setModalOpen(false)}
+                >
+                  ×
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="modal-icon">{selectedProduct.icon}</div>
                 <p>
                   <strong>{selectedProduct.tagline}</strong>
                 </p>
                 <p>{selectedProduct.description}</p>
-              </Modal.Content>
-              <Modal.Actions>
-                <Button color="blue" onClick={() => setModalOpen(false)}>
+              </div>
+              <div className="modal-footer">
+                <button
+                  className="modal-button"
+                  onClick={() => setModalOpen(false)}
+                >
                   Close
-                </Button>
-              </Modal.Actions>
-            </>
-          )}
-        </Modal>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "3rem",
-            marginBottom: "2rem",
-          }}
-        >
-          <Button
-            color="blue"
-            size="large"
-            onClick={() => (window.location.href = "/")}
-          >
+        <div className="software-footer">
+          <Link href="/" className="return-button">
             Return to Home
-          </Button>
+          </Link>
         </div>
-      </Container>
+      </div>
     </main>
   );
 }
