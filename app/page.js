@@ -20,24 +20,26 @@ export default function Home() {
     privacy: {
       title: "Safe & Private AI",
       content: (
-        <div className="space-y-6">
-          <p className="text-gray-700 leading-relaxed text-lg">
+        <div>
+          <p>
             At BeechTree, we understand that student privacy is paramount in
             educational environments. Our AI platform is built with
             privacy-by-design principles, ensuring that all student data remains
             secure and protected.
           </p>
-          <h4 className="font-semibold text-gray-800 text-xl">
-            Key Privacy Features:
-          </h4>
-          <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
-            <li>End-to-end encryption for all communications</li>
-            <li>No data sharing with third parties</li>
-            <li>FERPA and COPPA compliant</li>
-            <li>Local data processing when possible</li>
-            <li>Regular security audits and compliance checks</li>
-          </ul>
-          <p className="text-gray-700 text-lg">
+          <div className="modal-content-section">
+            <h4>Key Privacy Features:</h4>
+            <div className="modal-features-list">
+              <ul>
+                <li>End-to-end encryption for all communications</li>
+                <li>No data sharing with third parties</li>
+                <li>FERPA and COPPA compliant</li>
+                <li>Local data processing when possible</li>
+                <li>Regular security audits and compliance checks</li>
+              </ul>
+            </div>
+          </div>
+          <p>
             Teachers can confidently integrate AI into their classrooms knowing
             that student information remains private and secure at all times.
           </p>
@@ -47,24 +49,26 @@ export default function Home() {
     interface: {
       title: "Teacher-Friendly Interface",
       content: (
-        <div className="space-y-6">
-          <p className="text-gray-700 leading-relaxed text-lg">
+        <div>
+          <p>
             Our platform is designed specifically for educators, with an
             intuitive interface that requires no technical expertise. Teachers
             can focus on what they do best - teaching - while our AI handles the
             technical complexity.
           </p>
-          <h4 className="font-semibold text-gray-800 text-xl">
-            Interface Highlights:
-          </h4>
-          <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
-            <li>Drag-and-drop lesson planning tools</li>
-            <li>One-click content generation and customization</li>
-            <li>Visual progress tracking for students</li>
-            <li>Integration with existing classroom management systems</li>
-            <li>Mobile-responsive design for on-the-go access</li>
-          </ul>
-          <p className="text-gray-700 text-lg">
+          <div className="modal-content-section">
+            <h4>Interface Highlights:</h4>
+            <div className="modal-features-list">
+              <ul>
+                <li>Drag-and-drop lesson planning tools</li>
+                <li>One-click content generation and customization</li>
+                <li>Visual progress tracking for students</li>
+                <li>Integration with existing classroom management systems</li>
+                <li>Mobile-responsive design for on-the-go access</li>
+              </ul>
+            </div>
+          </div>
+          <p>
             Whether you&apos;re creating personalized learning paths, generating
             assessment materials, or tracking student progress, our interface
             makes complex tasks simple and efficient.
@@ -75,44 +79,44 @@ export default function Home() {
     testimonials: {
       title: "What Educators Say",
       content: (
-        <div className="space-y-8">
-          <div className="border-l-4 border-blue-500 pl-6">
-            <p className="text-gray-700 italic mb-3 text-lg leading-relaxed">
+        <div>
+          <div className="modal-testimonial-item">
+            <p className="modal-testimonial-quote">
               &ldquo;BeechTree has revolutionized the way our teachers interact
               with students, enhancing engagement and safety in the
               classroom.&rdquo;
             </p>
-            <p className="text-base text-gray-600 font-medium">
+            <p className="modal-testimonial-author">
               — School Principal, Lincoln Elementary
             </p>
           </div>
-          <div className="border-l-4 border-green-500 pl-6">
-            <p className="text-gray-700 italic mb-3 text-lg leading-relaxed">
+          <div className="modal-testimonial-item">
+            <p className="modal-testimonial-quote">
               &ldquo;The AI tools have saved me hours of preparation time while
               providing more personalized learning experiences for my
               students.&rdquo;
             </p>
-            <p className="text-base text-gray-600 font-medium">
+            <p className="modal-testimonial-author">
               — Sarah Martinez, 5th Grade Teacher
             </p>
           </div>
-          <div className="border-l-4 border-purple-500 pl-6">
-            <p className="text-gray-700 italic mb-3 text-lg leading-relaxed">
+          <div className="modal-testimonial-item">
+            <p className="modal-testimonial-quote">
               &ldquo;Finally, an AI platform that understands the unique needs
               of educators. The privacy features give us complete peace of
               mind.&rdquo;
             </p>
-            <p className="text-base text-gray-600 font-medium">
+            <p className="modal-testimonial-author">
               — Dr. James Chen, Technology Director
             </p>
           </div>
-          <div className="border-l-4 border-orange-500 pl-6">
-            <p className="text-gray-700 italic mb-3 text-lg leading-relaxed">
+          <div className="modal-testimonial-item">
+            <p className="modal-testimonial-quote">
               &ldquo;My students are more engaged than ever, and I can track
               their progress in real-time. BeechTree has transformed our
               classroom.&rdquo;
             </p>
-            <p className="text-base text-gray-600 font-medium">
+            <p className="modal-testimonial-author">
               — Maria Rodriguez, High School Math Teacher
             </p>
           </div>
