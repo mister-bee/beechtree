@@ -80,46 +80,41 @@ export default function Home() {
       title: "What Educators Say",
       content: (
         <div>
-          <div className="modal-testimonial-item">
-            <p className="modal-testimonial-quote">
-              &ldquo;BeechTree has revolutionized the way our teachers interact
-              with students, enhancing engagement and safety in the
-              classroom.&rdquo;
-            </p>
-            <p className="modal-testimonial-author">
-              — School Principal, Lincoln Elementary
-            </p>
+          <p>
+            Here&apos;s what educators across the country are saying about
+            BeechTree&apos;s impact on their classrooms and teaching experience.
+          </p>
+          <div className="modal-content-section">
+            <h4>Real Testimonials from Real Educators:</h4>
+            <div className="modal-features-list">
+              <ul>
+                <li>
+                  &ldquo;BeechTree has revolutionized the way our teachers
+                  interact with students, enhancing engagement and safety in the
+                  classroom.&rdquo; — School Principal, Lincoln Elementary
+                </li>
+                <li>
+                  &ldquo;The AI tools have saved me hours of preparation time
+                  while providing more personalized learning experiences for my
+                  students.&rdquo; — Sarah Martinez, 5th Grade Teacher
+                </li>
+                <li>
+                  &ldquo;Finally, an AI platform that understands the unique
+                  needs of educators. The privacy features give us complete
+                  peace of mind.&rdquo; — Dr. James Chen, Technology Director
+                </li>
+                <li>
+                  &ldquo;My students are more engaged than ever, and I can track
+                  their progress in real-time. BeechTree has transformed our
+                  classroom.&rdquo; — Maria Rodriguez, High School Math Teacher
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="modal-testimonial-item">
-            <p className="modal-testimonial-quote">
-              &ldquo;The AI tools have saved me hours of preparation time while
-              providing more personalized learning experiences for my
-              students.&rdquo;
-            </p>
-            <p className="modal-testimonial-author">
-              — Sarah Martinez, 5th Grade Teacher
-            </p>
-          </div>
-          <div className="modal-testimonial-item">
-            <p className="modal-testimonial-quote">
-              &ldquo;Finally, an AI platform that understands the unique needs
-              of educators. The privacy features give us complete peace of
-              mind.&rdquo;
-            </p>
-            <p className="modal-testimonial-author">
-              — Dr. James Chen, Technology Director
-            </p>
-          </div>
-          <div className="modal-testimonial-item">
-            <p className="modal-testimonial-quote">
-              &ldquo;My students are more engaged than ever, and I can track
-              their progress in real-time. BeechTree has transformed our
-              classroom.&rdquo;
-            </p>
-            <p className="modal-testimonial-author">
-              — Maria Rodriguez, High School Math Teacher
-            </p>
-          </div>
+          <p>
+            Join thousands of educators who are already transforming their
+            classrooms with BeechTree&apos;s innovative AI-powered tools.
+          </p>
         </div>
       ),
     },
