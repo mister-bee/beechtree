@@ -77,7 +77,7 @@ export default function Home() {
       ),
     },
     testimonials: {
-      title: "What Educators Say",
+      title: "What Educators Say!",
       content: (
         <div>
           <p>
@@ -89,7 +89,7 @@ export default function Home() {
             <div className="modal-features-list">
               <ul>
                 <li>
-                  &ldquo;BeechTree has revolutionized the way our teachers
+                  &ldquo;BeechTree hasss revolutionized the way our teachers
                   interact with students, enhancing engagement and safety in the
                   classroom.&rdquo; — School Principal, Lincoln Elementary
                 </li>
@@ -178,10 +178,8 @@ export default function Home() {
               paths for diverse classroom needs.
             </p>
           </div>
-          <div
-            className="testimonial"
-            onClick={() => openModal("testimonials")}
-          >
+
+          <div className="feature" onClick={() => openModal("testimonials")}>
             <div className="flex justify-center items-center w-full mb-4">
               <FaUserTie size={72} className="text-purple-600" />
             </div>
@@ -213,7 +211,11 @@ export default function Home() {
           >
             <FaEnvelope />
           </Link>
-          <Link href="/payment" className="contact-icon" aria-label="Payment">
+          <Link
+            href="/subscription"
+            className="contact-icon"
+            aria-label="Subscription"
+          >
             <FaFileInvoiceDollar />
           </Link>
           <p className="text-sm text-gray-600">

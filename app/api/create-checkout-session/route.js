@@ -8,12 +8,37 @@ export const dynamic = "force-dynamic";
 // You'll need to add your Stripe secret key to your environment variables
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-export async function POST() {
+export async function POST(request) {
   try {
-    // Create a Stripe checkout session
-    const session = await stripe.checkout.sessions.create({
+    const body = await request.json();
+    const { amount, description, invoiceId } = body;
+
+    let sessionConfig = {
       payment_method_types: ["card"],
-      line_items: [
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/payment`,
+    };
+
+    if (amount && description) {
+      // One-time payment for invoice
+      sessionConfig.line_items = [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: description,
+              description: invoiceId ? `Invoice #${invoiceId}` : "BeechTree Services",
+            },
+            unit_amount: Math.round(amount * 100), // Convert to cents
+          },
+          quantity: 1,
+        },
+      ];
+      sessionConfig.mode = "payment";
+      sessionConfig.success_url = `${process.env.NEXT_PUBLIC_BASE_URL}/payment/success?session_id={CHECKOUT_SESSION_ID}&invoice_id=${invoiceId}`;
+    } else {
+      // Default subscription mode
+      sessionConfig.line_items = [
         {
           price_data: {
             currency: "usd",
@@ -28,11 +53,14 @@ export async function POST() {
           },
           quantity: 1,
         },
-      ],
-      mode: "subscription",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/payment`,
-    });
+      ];
+      sessionConfig.mode = "subscription";
+      sessionConfig.success_url = `${process.env.NEXT_PUBLIC_BASE_URL}/subscription/success?session_id={CHECKOUT_SESSION_ID}`;
+      sessionConfig.cancel_url = `${process.env.NEXT_PUBLIC_BASE_URL}/subscription`;
+    }
+
+    // Create a Stripe checkout session
+    const session = await stripe.checkout.sessions.create(sessionConfig);
 
     return NextResponse.json({ url: session.url });
   } catch (error) {
