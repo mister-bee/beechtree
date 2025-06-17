@@ -133,6 +133,15 @@ export default function Home() {
       <div className="container">
         <header className="header">
           <h1>BeechTree</h1>
+          <div className="tree-logo-container">
+            <Image
+              src="/treelogo2.png"
+              alt="BeechTree Logo"
+              width={120}
+              height={120}
+              className="tree-logo"
+            />
+          </div>
           <p>Empowering Educators with Safe, Reliable AI Tools</p>
         </header>
 

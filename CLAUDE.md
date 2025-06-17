@@ -23,14 +23,16 @@ This is a Next.js 15 App Router application for **BeechTree**, an educational AI
 - `/` - Landing page with feature highlights and modals
 - `/software` - Catalog of 9 educational AI tools (Kansha, Picture Books, Writing Universe, etc.)
 - `/contact` - Contact form with validation and API submission
-- `/payment` - Stripe checkout integration for $99/month subscription
-- `/api/contact` - Contact form handler
-- `/api/create-checkout-session` - Stripe payment processing
+- `/payment` - Invoice creation and payment for custom amounts
+- `/subscription` - Stripe checkout integration for $99/month subscription
+- `/api/contact` - Contact form handler with Resend email integration
+- `/api/create-checkout-session` - Stripe payment processing (handles both subscriptions and one-time payments)
 
 ### Tech Stack
 - **Frontend**: React 18, Next.js 15, Semantic UI React
 - **Styling**: Custom CSS (globals.css) with blue color scheme (#2563eb)
 - **Payment**: Stripe integration
+- **Email**: Resend for contact form submissions
 - **Testing**: Jest with React Testing Library
 - **AI Integration**: Flowise chatbot and VectorShift iframe widgets
 
@@ -43,10 +45,11 @@ This is a Next.js 15 App Router application for **BeechTree**, an educational AI
 ### Environment Variables
 - `STRIPE_SECRET_KEY` - For payment processing
 - `NEXT_PUBLIC_BASE_URL` - For payment redirects
+- `RESEND_API_KEY` - For sending contact form emails via Resend
 
 ### Development Notes
 - Development server runs on port 3066 (not standard 3000)
 - All pages use client-side rendering
 - Tailwind is configured in package.json but config file is missing
 - PostCSS config exists but may need updates
-- Email service setup exists but is not fully implemented
+- Email service uses Resend (requires domain verification for production)

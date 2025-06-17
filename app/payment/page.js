@@ -3,6 +3,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Payment() {
   const currentYear = new Date().getFullYear();
@@ -91,7 +92,16 @@ export default function Payment() {
     <div className="min-h-screen bg-gray-50">
       <div className="container">
         <header className="header">
-          <h1>BeechTree Payment</h1>
+          <h1>BeechTree</h1>
+          <div className="tree-logo-container">
+            <Image
+              src="/treelogo2.png"
+              alt="BeechTree Logo"
+              width={120}
+              height={120}
+              className="tree-logo"
+            />
+          </div>
           <p>Create and pay invoices for BeechTree services</p>
         </header>
 
