@@ -274,20 +274,21 @@ a {
 }
 
 .cta-button {
-  display: block;
-  width: fit-content;
-  margin: 2rem auto;
-  padding: 1rem 2rem;
-  background-color: #2185d0;
+  display: inline-block;
+  background-color: #3b82f6;
   color: white;
-  text-align: center;
+  padding: 0.75rem 2rem;
   border-radius: 8px;
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  transition: background-color 0.3s;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  text-align: center;
+  margin: 2rem 0;
+  text-decoration: none;
 }
 
 .cta-button:hover {
-  background-color: #1678c2;
+  background-color: #2563eb;
+  color: white;
 }
 
 .features {
@@ -415,7 +416,7 @@ a {
 
 .cta-button {
   display: inline-block;
-  background-color: #2563eb;
+  background-color: #3b82f6;
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 8px;
@@ -423,10 +424,12 @@ a {
   transition: background-color 0.2s;
   text-align: center;
   margin: 2rem 0;
+  text-decoration: none;
 }
 
 .cta-button:hover {
-  background-color: #1d4ed8;
+  background-color: #2563eb;
+  color: white;
 }
 
 .features {
@@ -785,7 +788,7 @@ a {
 
 .return-button {
   display: inline-block;
-  background-color: #2563eb;
+  background-color: #3b82f6;
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 8px;
@@ -795,7 +798,8 @@ a {
 }
 
 .return-button:hover {
-  background-color: #1d4ed8;
+  background-color: #2563eb;
+  color: white;
 }
 
 /* Modal Styles */

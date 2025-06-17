@@ -10,6 +10,7 @@ import {
   FaFileAlt,
   FaHeart,
   FaPalette,
+  FaChild,
 } from "react-icons/fa";
 import { GiBee } from "react-icons/gi";
 
@@ -28,7 +29,7 @@ export default function SoftwarePage() {
     {
       title: "Picture Books",
       tagline: "Amazing AI stories for kids",
-      icon: <FaBook />,
+      icon: <FaChild />,
       description:
         "Create personalized picture books using advanced AI technology. Teachers and students can generate unique stories tailored to specific learning objectives, reading levels, and interests. Includes a vast library of AI-generated illustrations and customizable narrative templates.",
     },

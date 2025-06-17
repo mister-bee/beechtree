@@ -182,16 +182,26 @@ export default function Home() {
             className="testimonial"
             onClick={() => openModal("testimonials")}
           >
-            <div className="flex justify-center items-center w-full mb-6">
+            <div className="flex justify-center items-center w-full mb-4">
               <FaUserTie size={72} className="text-purple-600" />
             </div>
-            <h3 className="feature-title">What Educators Say</h3>
-            <p className="testimonial-quote">
+            <h3 className="feature-title text-xl font-semibold mb-4 text-[#4361ee]">
+              What Educators Say
+            </h3>
+            <p
+              className="testimonial-quote text-gray-600 leading-relaxed mb-0"
+              style={{ marginBottom: 0 }}
+            >
               &ldquo;BeechTree has revolutionized the way our teachers interact
               with students, enhancing engagement and safety in the
               classroom.&rdquo;
             </p>
-            <p className="testimonial-author">— School Principal</p>
+            <p
+              className="testimonial-author"
+              style={{ marginTop: "0.75rem", marginBottom: 0 }}
+            >
+              — School Principal
+            </p>
           </div>
         </div>
 
