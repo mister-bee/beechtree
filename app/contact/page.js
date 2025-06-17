@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function Contact() {
+  const currentYear = new Date().getFullYear();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -186,6 +187,14 @@ export default function Contact() {
             </div>
           )}
         </div>
+
+        <footer className="footer">
+          <div className="footer-content">
+            <p className="footer-copyright">
+              &copy; {currentYear} BeechTree LLC
+            </p>
+          </div>
+        </footer>
       </div>
     </div>
   );

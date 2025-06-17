@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function Payment() {
+  const currentYear = new Date().getFullYear();
   const [amount, setAmount] = useState("");
   const [description, setDescription] = useState("");
   const [customerName, setCustomerName] = useState("");
@@ -15,7 +16,7 @@ export default function Payment() {
 
   const handleCreateInvoice = async (e) => {
     e.preventDefault();
-    
+
     if (!amount || !customerName || !customerEmail) {
       setError("Please fill in all required fields");
       return;
@@ -38,8 +39,10 @@ export default function Payment() {
         customerName,
         customerEmail,
         createdAt: new Date().toLocaleDateString(),
-        dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString(), // 30 days from now
-        status: "Pending"
+        dueDate: new Date(
+          Date.now() + 30 * 24 * 60 * 60 * 1000
+        ).toLocaleDateString(), // 30 days from now
+        status: "Pending",
       };
 
       setInvoice(invoiceData);
@@ -66,7 +69,7 @@ export default function Payment() {
         body: JSON.stringify({
           amount: invoice.amount,
           description: invoice.description,
-          invoiceId: invoice.id
+          invoiceId: invoice.id,
         }),
       });
 
@@ -97,9 +100,18 @@ export default function Payment() {
             {!invoice ? (
               <>
                 <h3 className="feature-title">Create Invoice</h3>
-                <form onSubmit={handleCreateInvoice} style={{ maxWidth: "500px", margin: "0 auto" }}>
+                <form
+                  onSubmit={handleCreateInvoice}
+                  style={{ maxWidth: "500px", margin: "0 auto" }}
+                >
                   <div style={{ marginBottom: "1.5rem" }}>
-                    <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "bold" }}>
+                    <label
+                      style={{
+                        display: "block",
+                        marginBottom: "0.5rem",
+                        fontWeight: "bold",
+                      }}
+                    >
                       Amount Due ($) *
                     </label>
                     <input
@@ -113,14 +125,20 @@ export default function Payment() {
                         padding: "0.75rem",
                         border: "1px solid #d1d5db",
                         borderRadius: "8px",
-                        fontSize: "1rem"
+                        fontSize: "1rem",
                       }}
                       required
                     />
                   </div>
 
                   <div style={{ marginBottom: "1.5rem" }}>
-                    <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "bold" }}>
+                    <label
+                      style={{
+                        display: "block",
+                        marginBottom: "0.5rem",
+                        fontWeight: "bold",
+                      }}
+                    >
                       Description
                     </label>
                     <input
@@ -133,13 +151,19 @@ export default function Payment() {
                         padding: "0.75rem",
                         border: "1px solid #d1d5db",
                         borderRadius: "8px",
-                        fontSize: "1rem"
+                        fontSize: "1rem",
                       }}
                     />
                   </div>
 
                   <div style={{ marginBottom: "1.5rem" }}>
-                    <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "bold" }}>
+                    <label
+                      style={{
+                        display: "block",
+                        marginBottom: "0.5rem",
+                        fontWeight: "bold",
+                      }}
+                    >
                       Customer Name *
                     </label>
                     <input
@@ -152,14 +176,20 @@ export default function Payment() {
                         padding: "0.75rem",
                         border: "1px solid #d1d5db",
                         borderRadius: "8px",
-                        fontSize: "1rem"
+                        fontSize: "1rem",
                       }}
                       required
                     />
                   </div>
 
                   <div style={{ marginBottom: "1.5rem" }}>
-                    <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "bold" }}>
+                    <label
+                      style={{
+                        display: "block",
+                        marginBottom: "0.5rem",
+                        fontWeight: "bold",
+                      }}
+                    >
                       Customer Email *
                     </label>
                     <input
@@ -172,7 +202,7 @@ export default function Payment() {
                         padding: "0.75rem",
                         border: "1px solid #d1d5db",
                         borderRadius: "8px",
-                        fontSize: "1rem"
+                        fontSize: "1rem",
                       }}
                       required
                     />
@@ -210,16 +240,24 @@ export default function Payment() {
             ) : (
               <>
                 <h3 className="feature-title">Invoice Created</h3>
-                <div style={{
-                  backgroundColor: "white",
-                  padding: "2rem",
-                  borderRadius: "12px",
-                  border: "1px solid #e5e7eb",
-                  maxWidth: "500px",
-                  margin: "0 auto"
-                }}>
+                <div
+                  style={{
+                    backgroundColor: "white",
+                    padding: "2rem",
+                    borderRadius: "12px",
+                    border: "1px solid #e5e7eb",
+                    maxWidth: "500px",
+                    margin: "0 auto",
+                  }}
+                >
                   <div style={{ marginBottom: "1.5rem", textAlign: "center" }}>
-                    <h4 style={{ fontSize: "1.5rem", color: "#2563eb", marginBottom: "0.5rem" }}>
+                    <h4
+                      style={{
+                        fontSize: "1.5rem",
+                        color: "#2563eb",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
                       Invoice #{invoice.id}
                     </h4>
                     <p style={{ color: "#666" }}>Status: {invoice.status}</p>
@@ -241,14 +279,18 @@ export default function Payment() {
                     <strong>Due Date:</strong> {invoice.dueDate}
                   </div>
 
-                  <div style={{
-                    backgroundColor: "#f3f4f6",
-                    padding: "1rem",
-                    borderRadius: "8px",
-                    textAlign: "center",
-                    marginBottom: "1.5rem"
-                  }}>
-                    <h3 style={{ fontSize: "2rem", color: "#2563eb", margin: 0 }}>
+                  <div
+                    style={{
+                      backgroundColor: "#f3f4f6",
+                      padding: "1rem",
+                      borderRadius: "8px",
+                      textAlign: "center",
+                      marginBottom: "1.5rem",
+                    }}
+                  >
+                    <h3
+                      style={{ fontSize: "2rem", color: "#2563eb", margin: 0 }}
+                    >
                       ${invoice.amount.toFixed(2)}
                     </h3>
                   </div>
@@ -277,7 +319,7 @@ export default function Payment() {
                         border: "1px solid #d1d5db",
                         borderRadius: "8px",
                         backgroundColor: "white",
-                        cursor: "pointer"
+                        cursor: "pointer",
                       }}
                     >
                       Create New Invoice
@@ -290,7 +332,7 @@ export default function Payment() {
                         flex: 1,
                         opacity: loading ? 0.7 : 1,
                         cursor: loading ? "not-allowed" : "pointer",
-                        margin: 0
+                        margin: 0,
                       }}
                     >
                       {loading ? "Processing..." : "Pay Now"}
@@ -316,7 +358,11 @@ export default function Payment() {
         </div>
 
         <footer className="footer">
-          <p>&copy; 2024 BeechTree LLC</p>
+          <div className="footer-content">
+            <p className="footer-copyright">
+              &copy; {currentYear} BeechTree LLC
+            </p>
+          </div>
         </footer>
       </div>
     </div>

@@ -15,6 +15,7 @@ import {
 import { GiBee } from "react-icons/gi";
 
 export default function SoftwarePage() {
+  const currentYear = new Date().getFullYear();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -146,6 +147,14 @@ export default function SoftwarePage() {
             Return to Home
           </Link>
         </div>
+
+        <footer className="footer">
+          <div className="footer-content">
+            <p className="footer-copyright">
+              &copy; {currentYear} BeechTree LLC
+            </p>
+          </div>
+        </footer>
       </div>
     </main>
   );
