@@ -204,23 +204,19 @@ export default function Home() {
         </div>
 
         <footer className="footer">
-          <Link
-            href="/contact"
-            className="contact-icon"
-            aria-label="Contact Us"
-          >
-            <FaEnvelope />
-          </Link>
-          <Link
-            href="/subscription"
-            className="contact-icon"
-            aria-label="Subscription"
-          >
-            <FaFileInvoiceDollar />
-          </Link>
-          <p className="text-sm text-gray-600">
-            &copy; {currentYear} BeechTree LLC
-          </p>
+          <div className="footer-content">
+            <div className="footer-links">
+              <Link href="/contact" className="footer-link">
+                Contact Us
+              </Link>
+              <Link href="/payment" className="footer-link">
+                Payment
+              </Link>
+            </div>
+            <p className="footer-copyright">
+              &copy; {currentYear} BeechTree LLC
+            </p>
+          </div>
         </footer>
       </div>
 
