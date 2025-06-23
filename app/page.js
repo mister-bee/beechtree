@@ -137,8 +137,8 @@ export default function Home() {
             <Image
               src="/treelogo2.png"
               alt="BeechTree Logo"
-              width={120}
-              height={120}
+              width={500}
+              height={500}
               className="tree-logo"
             />
           </div>
@@ -157,7 +157,7 @@ export default function Home() {
         </div>
 
         <div className="text-center">
-          <Link href="/software" className="cta-button">
+          <Link href="/pages/software" className="cta-button">
             Explore Our Software
           </Link>
         </div>
@@ -215,10 +215,10 @@ export default function Home() {
         <footer className="footer">
           <div className="footer-content">
             <div className="footer-links">
-              <Link href="/contact" className="footer-link">
+              <Link href="/pages/contact" className="footer-link">
                 Contact Us
               </Link>
-              <Link href="/payment" className="footer-link">
+              <Link href="/pages/payment" className="footer-link">
                 Payment
               </Link>
             </div>

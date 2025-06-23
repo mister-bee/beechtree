@@ -97,8 +97,8 @@ export default function Payment() {
             <Image
               src="/treelogo2.png"
               alt="BeechTree Logo"
-              width={120}
-              height={120}
+              width={200}
+              height={200}
               className="tree-logo"
             />
           </div>
